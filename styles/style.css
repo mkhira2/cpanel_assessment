@@ -1,0 +1,75 @@
+/*----------------------------------------------
+BASIC STRUCTURE
+----------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+  list-style: none;
+  font-family: Helvetica;
+}
+
+/* defining color variable */
+:root {
+  --cPanelOrange: rgb(255,108,24);
+}
+
+/* keeps images from trying to bust out of divs */
+img {
+  max-width: 100%;
+}
+
+/*----------------------------------------------
+BODY
+----------------------------------------------*/
+
+/* 'Welcome to cPanel!' styling */
+#title {
+  color: var(--cPanelOrange);
+  font-weight: bold;
+}
+
+/*  PART 1 */
+input#username, input#password, input#usernumber, input#geoglocation {
+  width: 30%;
+  margin: 0 auto;
+}
+
+/*  PART 2 */
+.yui3-overlay-content {
+    background: var(--cPanelOrange);
+    color: white;
+    font-size: 16px;
+    border: 1px solid black;
+    box-shadow: 3px 3px grey;
+    padding: 5px;
+}
+
+#close {
+    float: right;
+    display: inline-block;
+    padding: 2px 5px;
+    background: white;
+    color: red;
+}
+
+#close:hover {
+  cursor: pointer;
+}
+
+/* PART 3 */
+.modifiedArray {
+  color: var(--cPanelOrange);
+}
+
+/* PART 4 */
+.flickrPicture {
+  display: inline-block;
+  margin: 25px 10px;
+  color: var(--cPanelOrange);
+  border: 1px solid black;
+  box-shadow: 3px 3px grey;
+  padding: 5px;
+  width: 30%;
+  vertical-align: top;
+}

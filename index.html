@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Welcome to cPanel!</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css">
+	<link rel='stylesheet' href='styles/style.css'>
+
+</head>
+
+<body>
+	<div id="intro">
+		<h1 id='title'>Welcome to cPanel!</h1>
+	</div>
+	<div class='test-container' id="registrationform">
+		<h2>Part 1: Register your cPanel Software</h2>
+		<form action="register.cgi" method="POST" name="loginform" onsubmit='return greatSuccess(this)'>
+			<input type="hidden" name="action" value="register" />
+			<div class='form-group'><label for="username">Desired User Name</label><input type="text" class='form-control' id="username" name="username" value="" /></div>
+			<!--must contain a lower and upper case letter and at least 1 number. Cannot contain special characters -->
+			<div class='form-group'><label for="password">Password</label><input type="password" class='form-control' id="password" name="password" value="" /></div>
+			<!--must contain at least 2 numbers and be 8 to 15 characters in length-->
+			<div class='form-group'><label for="usernumber">User Number</label><input type="text" class='form-control' id="usernumber" name="usernumber" value="" /></div>
+			<!--must be 36 digits and have no non-numeral characters-->
+			<div class='form-group'><label for="geoglocation">Geographic Location</label><input type="text" class='form-control' id="geoglocation" name="geoglocation" value="" /></div>
+			<!--currently no input validation is used as the input validation would be different for US and non-US locations-->
+			<input type="submit" alt="register" name="register" value="Register" class="btn btn-primary" id="submit_btn" />
+		</form>
+	</div>
+	<hr />
+	<div class='test-container' id='someinfo'>
+		<h2>Part 2: cPanel.net</h2>
+		<div id="overlay">
+			<div class="yui3-popup">cPanel is a leading Web Hosting Control Panel Software provider supplying hosting automation tools to numerous data centers and customers all around the world. cPanel offers web hosting software that automates the intricate workings of web hosting
+				servers. cPanel products are used on tens of thousands of servers worldwide to equip server administrators with the tools they need to provide top notch hosting to their customers. Since our beginnings in 1997, cPanel has been setting the standard
+				for web hosting automation.<span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>&times;</span></div>
+		</div>
+		<input type="button" class="btn btn-primary" id="findoutmore" value="Find Out More" />
+	</div>
+	<hr />
+	<script type="text/javascript">
+		var thisArray = ['T', 'h', 'a', 'i', 's', 'b', ' ', 'i', 'c', 's', ' ', 'a', 't', 'h', 'e', 'e', ' ', 't', 's', 'o', 'r', 'n', 'g', 't', ' ', 't', 'n', 'h', 'a', 's', 't', ' ', 'o', 'n', 'e', 'o', 'v', 'e', 'a', 'r', ' ', 'f', 'e', 'n', 'a', 'd',
+			's', 'p', ',', ' ', 'p', 'y', 'e', 'i', 's', ' ', 'p', 'i', 't', 'o', ' ', 'g', ' ', 'o', 'e', 'i', 's', ' ', 't', 'o', 'n', 'e', ' ', 'a', ' ', 'n', 'd', ' ', ' ', 'o', 'i', 'n', ' ', 'a', 'm', 'y', ' ', ' ', 'f', 'a', 'r', 'i', ' ', 'e', 'n',
+			'o', 'd', 's', 'i', ' ', 'S', ' ', 'o', 'm', 'a', 'e', ' ', 'a', 'p', 'e', ' ', 'o', 'p', 'a', 'l', 'e', 'r', ' ', 's', ' ', 't', 'a', 'a', 'r', 't', ' ', 'e', 'd', 'u', ' ', 's', ' ', 'i', 'n', 'g', 'g', 'i', ' ', 'n', 'g', 'o', ' ', 'i', 't',
+			't', ',', ' ', ' ', 'n', 'i', 'o', 't', 'h', ' ', 'k', 'a', 'n', 'o', ' ', 'w', 'i', ' ', 'n', 'g', 'o', ' ', 'w', 'r', 'h', 'a', 'i', 't', ' ', 's', 'i', 't', 'h', ' ', 'w', 'r', 'a', 's', 'h', ' ', 'A', ' ', 'n', 'd', 'a', ' ', 't', 'o', 'h',
+			'e', ' ', 'y', ' ', 'a', 'w', 'i', 'p', 'l', 'l', 'o', ' ', 'c', 'r', 'o', 'n', ' ', 't', 'i', 'p', 'n', 'u', 'i', 'e', ' ', 't', 's', 'i', ' ', 'n', 'g', ' ', 'i', 'n', ' ', 'g', ' ', 's', 'i', 't', 'h', ' ', 'f', 'r', 'o', 'r', ' ', 'e', 'v',
+			't', 'e', 'r', 't', ' ', 'j', 'u', 'u', 's', 't', 't', ' ', 'a', 'b', 'e', 'l', 'c', 'a', ' ', 'u', 's', 'l', 'e'
+		];
+		document.write("<div class='test-container'><h2>Part 3: The Array:</h2>");
+		for (var i = 1; i <= thisArray.length; i++) {
+			document.write(thisArray[i]);
+		}
+	</script>
+	<br/><br/>
+	<div class='modifiedArray'></div>
+	</div>
+	<hr />
+	<div class='test-container'>
+		<h2>Part 4: Flickr Photos</h2>
+		<p class='lead'>Click on the button to see where it's _______.</p>
+		<div class='imageContainer'></div>
+		<input type="button" class="btn btn-primary" id="flickrpics" value="Show Pictures" onclick='showFlickrPictures()' />
+	</div>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js'></script>
+	<script src='scripts/script.js'></script>
+</body>
+
+</html>
